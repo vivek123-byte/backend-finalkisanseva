@@ -1,14 +1,13 @@
 const corsOptions = {
   origin: [
-    "http://localhost:5173", // local dev
+    "http://localhost:5173",
     "http://localhost:4173",
-    "https://frontend-1final-kisan-seva-lfhw.vercel.app", // ✅ add this
+    "https://agro-contract.vercel.app", // <-- updated to your real frontend URL
   ],
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
   credentials: true,
   allowedHeaders: ["Content-Type", "Authorization"],
 };
-
 
 const CHATTU_TOKEN = "chattu-token";
 
