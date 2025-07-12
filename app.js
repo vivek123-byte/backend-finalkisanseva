@@ -34,7 +34,7 @@ dotenv.config({
 });
 
 const mongoURI = process.env.MONGO_URI;
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 10000;
 const envMode = process.env.NODE_ENV.trim() || "PRODUCTION";
 const adminSecretKey = process.env.ADMIN_SECRET_KEY || "adsasdsdfsdfsdfd";
 const userSocketIDs = new Map();
@@ -215,7 +215,7 @@ io.on("connection", (socket) => {
 
 app.use(errorMiddleware);
 
-server.listen(port, () => {
+server.listen(port, "0.0.0.0", () => {
   console.log(`Server is running on port ${port} in ${envMode} Mode`);
 });
 
