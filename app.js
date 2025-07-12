@@ -18,6 +18,7 @@ import {
   STOP_TYPING,
 } from "./constants/events.js";
 import { getSockets } from "./lib/helper.js";
+
 import { Message } from "./models/message.js";
 import { corsOptions } from "./constants/config.js";
 import { socketAuthenticator } from "./middlewares/auth.js";
@@ -32,6 +33,7 @@ import contractRoute from "./routes/contractRoutes.js";
 dotenv.config({
   path: "./.env",
 });
+
 
 const mongoURI = process.env.MONGO_URI;
 const port = process.env.PORT || 10000;
@@ -53,6 +55,8 @@ const server = createServer(app);
 const io = new Server(server, {
   cors: corsOptions,
 });
+
+app.use(cors(corsOptions));
 
 app.set("io", io);
 
